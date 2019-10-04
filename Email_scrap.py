@@ -9,7 +9,6 @@ def seg():
 	with open("urls.txt", "r") as url:
 		for SearchString in url:
 			try:
-
 				browser = webdriver.Firefox()
 				browser.get(('https://google.com'))
 				SearchElem=browser.find_element_by_name('q')
@@ -18,9 +17,9 @@ def seg():
 				SearchButton.click()
 				SearchElem=browser.find_element_by_xpath("//a[contains(text(),'Website')]")
 				SearchElem.click()
-
 			except:
 				SearchElem=browser.find_element_by_class_name('LC20lb')
 				SearchElem.click()
 
-seg()
+if __name__ == '__main__':
+	seg()
